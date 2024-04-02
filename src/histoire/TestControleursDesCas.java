@@ -18,7 +18,7 @@ public class TestControleursDesCas {
 
 		//TODO decommenter les cas au fur et a mesure que vous avancez dans le TP
 		
-		Village village = new Village("le village des irrÃ©ductibles", 10, 5);
+		Village village = new Village("le village des irréductibles", 10, 5);
 		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
 		village.setChef(abraracourcix);
 		Gaulois asterix = new Gaulois("Asterix", 6);
@@ -27,18 +27,18 @@ public class TestControleursDesCas {
 		ControlAfficherVillage controlAfficherVillage = new ControlAfficherVillage(
 				village);
 
-		// Cas 2 : Emmenager
+//		 Cas 2 : Emmenager
 
-//		System.out.println("Cas 2 : Emmenager");
-//		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
-//		controlEmmenager.ajouterDruide("Panoramix", 10, 5, 7);
-//		controlEmmenager.ajouterGaulois("Asterix", 6);
-//		controlEmmenager.ajouterGaulois("Obelix", 12);
-//		String[] nomsVillageois = controlAfficherVillage.donnerNomsVillageois();
-//		System.out.println("Les villageois sont : ");
-//		for (String villageois : nomsVillageois) {
-//			System.out.println("- " + villageois);
-//		}
+		System.out.println("Cas 2 : Emmenager");
+		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
+		controlEmmenager.ajouterDruide("Panoramix", 10, 5, 7);
+		controlEmmenager.ajouterGaulois("Asterix", 6);
+		controlEmmenager.ajouterGaulois("Obelix", 12);
+		String[] nomsVillageois = controlAfficherVillage.donnerNomsVillageois();
+		System.out.println("Les villageois sont : ");
+		for (String villageois : nomsVillageois) {
+			System.out.println("- " + villageois);
+		}
 		
 //		Sortie Console :
 //		Cas 2 : Emmenager
@@ -50,14 +50,14 @@ public class TestControleursDesCas {
 //		- Obelix
 
 		// Cas 3 : Verifier Identification
-//		System.out.println("///////////////////////////////");
-//		System.out.println("Cas 3 : Verifier Identification");
-//		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(
-//				village);
-//		boolean vendeur = controlVerifierIdentite.verifierIdentite("Panoramix");
-//		System.out.println("Panoramix est un villageois ? " + vendeur);
-//		vendeur = controlVerifierIdentite.verifierIdentite("Intrus");
-//		System.out.println("Intrus est un villageois ? " + vendeur);
+		System.out.println("///////////////////////////////");
+		System.out.println("Cas 3 : Verifier Identification");
+		ControlVerifierIdentite controlVerifierIdentite = new ControlVerifierIdentite(
+				village);
+		boolean vendeur = controlVerifierIdentite.verifierIdentite("Panoramix");
+		System.out.println("Panoramix est un villageois ? " + vendeur);
+		vendeur = controlVerifierIdentite.verifierIdentite("Intrus");
+		System.out.println("Intrus est un villageois ? " + vendeur);
 
 //		Sortie Console :
 		
@@ -68,12 +68,12 @@ public class TestControleursDesCas {
 
 		// Cas 4 : Prendre etal
 
-//		System.out.println("///////////////////////////////");
-//		System.out.println("Cas 4 : Prendre etal");
-//		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(
-//				controlVerifierIdentite, village);
-//		int numeroEtal = controlPrendreEtal.prendreEtal("Obelix", "fleur", 5);
-//		System.out.println("Obelix a pris l'Ã©tal nÂ°" + numeroEtal);
+		System.out.println("///////////////////////////////");
+		System.out.println("Cas 4 : Prendre etal");
+		ControlPrendreEtal controlPrendreEtal = new ControlPrendreEtal(
+				controlVerifierIdentite, village);
+		int numeroEtal = controlPrendreEtal.prendreEtal("Obelix", "fleur", 5);
+		System.out.println("Obelix a pris l'étal n°" + numeroEtal);
 
 //		Sortie Console :
 //		Cas 4 : Prendre etal
@@ -82,26 +82,26 @@ public class TestControleursDesCas {
 
 		// Cas 5 : trouverEtalVendeur
 
-//		System.out.println("///////////////////////////////");
-//		System.out.println("Cas 5 : trouver etal vendeur");
-//		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(
-//				village);
-//		Etal etalObelix = controlTrouverEtalVendeur
-//				.trouverEtalVendeur("Obelix");
-//		Etal etalIntrus = controlTrouverEtalVendeur
-//				.trouverEtalVendeur("Intrus");
-//		System.out.print("L'Ã©tal d'ObÃ©lix");
-//		if (etalObelix != null) {
-//			System.out.println(" est trouvÃ©");
-//		} else {
-//			System.out.println(" n'est pas trouvÃ©");
-//		}
-//		System.out.print("L'Ã©tal de Intrus");
-//		if (etalIntrus != null) {
-//			System.out.println(" est trouvÃ©");
-//		} else {
-//			System.out.println(" n'est pas trouvÃ©");
-//		}
+		System.out.println("///////////////////////////////");
+		System.out.println("Cas 5 : trouver etal vendeur");
+		ControlTrouverEtalVendeur controlTrouverEtalVendeur = new ControlTrouverEtalVendeur(
+				village);
+		Etal etalObelix = controlTrouverEtalVendeur
+				.trouverEtalVendeur("Obelix");
+		Etal etalIntrus = controlTrouverEtalVendeur
+				.trouverEtalVendeur("Intrus");
+		System.out.print("L'étal d'Obélix");
+		if (etalObelix != null) {
+			System.out.println(" est trouvé");
+		} else {
+			System.out.println(" n'est pas trouvé");
+		}
+		System.out.print("L'étal de Intrus");
+		if (etalIntrus != null) {
+			System.out.println(" est trouvé");
+		} else {
+			System.out.println(" n'est pas trouvé");
+		}
 		
 
 //		Sortie Console :

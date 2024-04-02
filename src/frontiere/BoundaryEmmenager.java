@@ -12,10 +12,10 @@ public class BoundaryEmmenager {
 	public void emmenager(String nomVisiteur) {
 		if (controlEmmenager.isHabitant(nomVisiteur)) {
 			System.out.println(
-					"Mais vous Ãªtes dÃ©jÃ  un habitant du village !");
+					"Mais vous êtes déjà  un habitant du village !");
 		} else {
 			StringBuilder question = new StringBuilder();
-			question.append("ÃŠtes-vous :\n");
+			question.append("Êtes-vous :\n");
 			question.append("1 - un druide.\n");
 			question.append("2 - un gaulois.\n");
 			int choixUtilisateur = -1;
@@ -31,8 +31,7 @@ public class BoundaryEmmenager {
 					break;
 
 				default:
-					System.out
-							.println("Vous devez choisir le chiffre 1 ou 2 !");
+					System.out.println("Vous devez choisir le chiffre 1 ou 2 !");
 					break;
 				}
 			} while (choixUtilisateur != 1 && choixUtilisateur != 2);
@@ -40,6 +39,7 @@ public class BoundaryEmmenager {
 	}
 
 	private void emmenagerDruide(String nomVisiteur) {
+		System.out.println("Bienvenue druide " + nomVisiteur + "!\n");
 		int choixUtilisateurEffetPotionMax = -1;
 		int choixUtilisateurEffetPotionMin = -1;
 		int choixUtilisatuerForce = -1;
@@ -54,7 +54,7 @@ public class BoundaryEmmenager {
 			choixUtilisateurEffetPotionMin = Clavier.entrerEntier(questionEffetPotionMin.toString());
 			choixUtilisateurEffetPotionMax = Clavier.entrerEntier(questionEffetPotionMax.toString());
 			if (choixUtilisateurEffetPotionMax < choixUtilisateurEffetPotionMin) {
-				System.out.println("Attention Druide, vous vous Ãªtes trompÃ© entre le minimum et le maximum.\n");
+				System.out.println("Attention Druide, vous vous êtes trompé entre le minimum et le maximum.\n");
 			}
 		} while (choixUtilisateurEffetPotionMax < choixUtilisateurEffetPotionMin);
 		controlEmmenager.ajouterDruide(nomVisiteur, choixUtilisatuerForce, choixUtilisateurEffetPotionMin, choixUtilisateurEffetPotionMax);
@@ -62,6 +62,11 @@ public class BoundaryEmmenager {
 	}
 	
 	private void emmenagerGaulois(String nomVisiteur) {
-		
+		System.out.println("Bienvenue villageois " + nomVisiteur + "!\n");
+		int choixUtilisateurForce = -1;
+		StringBuilder question = new StringBuilder();
+		question.append("Quelle est votre force ?");
+		choixUtilisateurForce = Clavier.entrerEntier(question.toString());
+		controlEmmenager.ajouterGaulois(nomVisiteur, choixUtilisateurForce);
 	}
 }
