@@ -1,12 +1,9 @@
 package frontiere;
 
-import java.util.Scanner;
-
 import controleur.ControlPrendreEtal;
 
 public class BoundaryPrendreEtal {
 	private ControlPrendreEtal controlPrendreEtal;
-	private Scanner scan = new Scanner(System.in);
 
 	public BoundaryPrendreEtal(ControlPrendreEtal controlChercherEtal) {
 		this.controlPrendreEtal = controlChercherEtal;
@@ -14,12 +11,12 @@ public class BoundaryPrendreEtal {
 
 	public void prendreEtal(String nomVendeur) {
 		if(!(controlPrendreEtal.verifierIdentite(nomVendeur))) {
-			System.out.println("Je suis désolée " + nomVendeur + " mais il faut être un habitant de notre village pour commercer ici.\n");
+			System.out.println("Je suis dï¿½solï¿½e " + nomVendeur + " mais il faut ï¿½tre un habitant de notre village pour commercer ici.\n");
 		}
 		else {
-			System.out.println("Bonjour " + nomVendeur + ", je vais regarder si je peux vous trouver un étal.");
+			System.out.println("Bonjour " + nomVendeur + ", je vais regarder si je peux vous trouver un ï¿½tal.");
 			if(!(controlPrendreEtal.resteEtals())) {
-				System.out.println("Désolée "+ nomVendeur + " je n'ai plus d'étal qui ne soit pas déjà occupé.");
+				System.out.println("Dï¿½solï¿½e "+ nomVendeur + " je n'ai plus d'ï¿½tal qui ne soit pas dï¿½jï¿½ occupï¿½.");
 			}
 			else {
 				installerVendeur(nomVendeur);
@@ -30,7 +27,7 @@ public class BoundaryPrendreEtal {
 	private void installerVendeur(String nomVendeur) {
 		String choixUtilisateurProduit = null;
 		int choixUtilisateurNbProduit = -1;
-		System.out.println("C'est parfait, il me reste un étal pour vous !");
+		System.out.println("C'est parfait, il me reste un ï¿½tal pour vous !");
 		System.out.println("Il me faudrait quelques renseignements:");
 		StringBuilder questionProduit = new StringBuilder();
 		StringBuilder questionNbProduit = new StringBuilder();
@@ -41,7 +38,7 @@ public class BoundaryPrendreEtal {
 		int numeroEtal = -1;
 		numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, choixUtilisateurProduit, choixUtilisateurNbProduit);
 		if (numeroEtal != -1) {
-			System.out.println("Le vendeur " + nomVendeur + " s'est installé à l'étal n°" + numeroEtal +".\n");
+			System.out.println("Le vendeur " + nomVendeur + " s'est installï¿½ ï¿½ l'ï¿½tal nï¿½" + numeroEtal +".\n");
 		}
 	}
 }
