@@ -115,10 +115,10 @@ public class Village {
 	}
 
 	////////////////////// Classe Interne ///////////////////////
-	private static class Marche {
+	public class Marche {
 		private Etal[] etals;
 
-		private Marche(int nbEtals) {
+		public Marche(int nbEtals) {
 			etals = new Etal[nbEtals];
 			for (int i = 0; i < nbEtals; i++) {
 				etals[i] = new Etal();

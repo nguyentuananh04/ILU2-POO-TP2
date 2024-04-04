@@ -6,6 +6,7 @@ import villagegaulois.Village;
 public class ControlPrendreEtal {
 	private Village village;
 	private ControlVerifierIdentite controlVerifierIdentite;
+	
 
 	public ControlPrendreEtal(ControlVerifierIdentite controlVerifierIdentite,
 			Village village) {
@@ -19,12 +20,13 @@ public class ControlPrendreEtal {
 
 	public int prendreEtal(String nomVendeur, String produit, int nbProduit) {
 		int numeroEtal = -1;
-		Gaulois vendeur = new Gaulois(nomVendeur, 0);
+		Gaulois vendeur = village.trouverHabitant(nomVendeur);
 		numeroEtal = village.installerVendeur(vendeur, produit, nbProduit) + 1;
 		return numeroEtal;
 	}
 
 	public boolean verifierIdentite(String nomVendeur) {
+		controlVerifierIdentite = new ControlVerifierIdentite(village);
 		return controlVerifierIdentite.verifierIdentite(nomVendeur);
 	}
 }
